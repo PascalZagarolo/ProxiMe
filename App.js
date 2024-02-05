@@ -4,7 +4,10 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text className="text-gray-900/80 ">
+        Willkommen bei <Text className="font-bold text-lg text-gray-900"> Proximity </Text>
+        
+        </Text>
       <StatusBar style="auto" />
     </View>
   );
