@@ -1,6 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
+import HomeScreen from './screens/Homescreen';
+
 
 export default function App() {
 
@@ -8,21 +10,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text className="text-gray-900/80 ">
-       Willkommen bei <Text className="font-bold text-lg text-gray-900"> Proximity </Text>        
-        </Text>
-      <StatusBar style="auto" />
-      <View className="mt-2 bg-blue-800">
-      <Button
-      color="black"
-      
-      title='Direkt anfangen'
-      onPress={() => {setCounter(counter + 1)}}
-      />
-      </View>
-      
-        
-      
+      <Text><HomeScreen/></Text>
       
     </View>
   );
