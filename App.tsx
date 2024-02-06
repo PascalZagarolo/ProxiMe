@@ -2,17 +2,26 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import HomeScreen from './screens/Homescreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 export default function App() {
 
-  const [counter, setCounter] = useState(0);
+  const Stack = createNativeStackNavigator();
 
   return (
-    <View style={styles.container}>
-      <Text><HomeScreen/></Text>
+    <NavigationContainer>
+      <View style={styles.container}>
+      <Text>
+        <Stack.Screen
+        name='Home'
+        component={HomeScreen}
+        options={{ title: 'Welcome' }} />
+        </Text>
       
     </View>
+    </NavigationContainer>
   );
 }
 
