@@ -5,6 +5,9 @@ import { Button, Pressable, StyleSheet, Text, View } from 'react-native';
 
 
 const HomeScreen = () => {
+
+   
+
     return (
         <View style={styles.container}>
             <Text style={styles.mainText}>
@@ -13,8 +16,12 @@ const HomeScreen = () => {
             </Text>
             <View style={{ marginTop: 20 }}> 
                 <Pressable onPress={() => { console.log("Hallo") }} style={styles.button}>
-                    <View style={styles.buttonContent}>
-                        <Text style={styles.buttonText}> Direkt loslegen </Text>
+                    <View>
+                        <Text style={styles.buttonText}> Direkt loslegen 
+                        <View style={styles.icon}>
+                        <ArrowRight color='white' style={styles.icon}/>
+                        </View>
+                         </Text>
                     </View>
                 </Pressable>
             </View>
@@ -32,7 +39,7 @@ const styles = StyleSheet.create({
         color: 'black',
         fontWeight: 'bold',
         fontSize: 24,
-         // Increase margin bottom for welcome text
+        
     },
     name: {
         fontWeight: 'normal'
@@ -40,21 +47,22 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: 'black',
         borderRadius: 10,
-        padding: 4,
-        textAlign: 'center',
-        borderColor: 'black',
-        color: 'black',
-    },
-    buttonContent: {
-        padding: 10, // Adjust padding here for spacing
+        padding: 16, 
+        paddingHorizontal: 16, 
+        flexDirection: 'row', 
+        alignItems: 'center', 
     },
     buttonText: {
         color: 'white',
         fontWeight: 'bold',
         fontSize: 18,
-        textAlign: 'center',
+        
+    },
+    icon: {
+        marginLeft: 16, 
     }
-})
+});
+
 
 export default HomeScreen;
 
