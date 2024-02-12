@@ -1,36 +1,39 @@
 
-import { NavigationAction } from '@react-navigation/native';
-import { ArrowRight, User2 } from 'lucide-react-native';
-import React from 'react';
-import { Button, Pressable, StyleSheet, Text, View } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
+import React from "react";
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import SettingsScreen from "./Settingsscreen";
 
 
 
 
-const HomeScreen = ({
-   
-}) => {
 
+const HomeScreen = (
+    
+) => {
 
+    const navigation = useNavigation();
+    
 
     return (
         <View style={styles.container}>
-            <Text style={styles.mainText}>
-                Willkommen bei
-                <Text style={styles.name}> Proximity. </Text>
-            </Text>
-            <View style={{ marginTop: 20 }}>
-                <Pressable onPress={() => { console.log("Hallo") }} style={styles.button}>
-                    <View style={{justifyContent : 'center', alignItems: 'center', flexDirection : 'column'}}>
-                        <Text style={styles.buttonText} > Direkt starten
-                            <View style={styles.icon}>
-                                <ArrowRight color='white' style={styles.icon} />
-                            </View>
-                        </Text>
-                    </View>
-                </Pressable>
-            </View>
+        <Text style={styles.mainText}>
+            Willkommen bei
+            <Text style={styles.name}> Proximity. </Text>
+        </Text>
+        <View style={{ marginTop: 20 }}>
+            <Pressable          //@ts-ignore
+                onPress={() => navigation.navigate('Settings')}
+                style={styles.button}
+            >
+                <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+                    <Text style={styles.buttonText} >
+                        Direkt starten
+                    </Text>
+                </View>
+            </Pressable>
         </View>
+    </View>
     );
 }
 

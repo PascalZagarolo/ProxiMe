@@ -4,6 +4,7 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 import HomeScreen from './screens/Homescreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import SettingsScreen from './screens/Settingsscreen';
 
 
 export default function App() {
@@ -12,15 +13,10 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <View style={styles.container}>
-      <Text>
-        <Stack.Screen
-        name='Home'
-        component={HomeScreen}
-        options={{ title: 'Welcome' }} />
-        </Text>
-      
-    </View>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} options={{title: 'Willkommen'}}/>
+        <Stack.Screen name="Settings" component={SettingsScreen} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
